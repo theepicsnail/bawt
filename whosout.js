@@ -10,7 +10,6 @@ module.exports = function (req, res, next) {
 	botPayload.username = 'calendarbot'
 	botPayload.channel = req.body.channel_id
 	botPayload.icon_emoji = ':date:'
-	console.log("Testing: " + Object.keys(botPayload))
 
 
 	send(botPayload, function (error, status, body) {
@@ -38,11 +37,11 @@ function checkWhosOut() {
 	}	
 	
 	
-	console.log("+++ " + Object.keys(options));
+	console.log("Tweedle Dee " + Object.keys(options));
 	var req = https.request(options, function(res) {
 
 		var data = ""
-	 	console.log("FUCKING SHIT GODDAMMIT FUCK");	
+	 	console.log("Tweedle Dumb");	
 		res.on('data', function (chunk) {
 
 			data += chunk
@@ -81,6 +80,7 @@ function checkWhosOut() {
 }
  
 function send (payload, callback) {
+	console.log("SlackSend Debug");
 	//var path = process.env.INCOMING_WEBHOOK_PATH;
 	var path = '/T03MQBBHJ/B04H9MABW/5HeNoIBgsatXtnchmlkYcoZJ'
 	var uri = 'https://hooks.slack.com/services' + path
