@@ -59,7 +59,6 @@ function send (payload, callback) {
 	//var path = process.env.INCOMING_WEBHOOK_PATH;
 	var path = '/T03MQBBHJ/B04H9MABW/5HeNoIBgsatXtnchmlkYcoZJ';
 	var uri = 'https://hooks.slack.com/services' + path;
-	console.log("TEST: " + uri);	
 	request({
 		uri: uri,
 		method: 'POST',

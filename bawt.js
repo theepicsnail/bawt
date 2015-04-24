@@ -5,12 +5,12 @@ var Slack= require( 'node-slack' );
 var slack = new Slack("riflepaperco", "xoxb-4576633068-1grqY6hLDU6jjdXdN9ldz8oC");
 
 var options = {
-            host: 'www.google.com',
-            port: 443,
-            path: '/calendar/ical/riflepaperco.com_2832qms2poc8madqd0uumdmdvo%40group.calendar.google.com/public/basic.ics',
-            //path: '/calendar/ical/familab.4am%40gmail.com/public/basic.ics',
-            method: 'GET'
-        }
+	host: 'www.google.com',
+	port: 443,
+	path: '/calendar/ical/riflepaperco.com_2832qms2poc8madqd0uumdmdvo%40group.calendar.google.com/public/basic.ics',
+	//path: '/calendar/ical/familab.4am%40gmail.com/public/basic.ics',
+	method: 'GET'
+}
 
         var req = https.request(options, function(res) {
             var data = ""
