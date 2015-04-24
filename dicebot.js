@@ -16,7 +16,7 @@ module.exports = function (req, res, next) {
 
 		if (matches && matches[1] && matches[2]) {
 			times = matches[1];
-			dies = matches[2];
+			die = matches[2];
 		} else {
 			// Send error
 			return res.status(200).send('<number>d<sides>');
