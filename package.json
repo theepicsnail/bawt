@@ -9,7 +9,8 @@
   "author": "John Cope",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.x.x",
     "express": "^4.12.3",
-	"body-parser": "^1.x.x"
+    "request": "^2.55.0"
   }
 }
