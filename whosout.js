@@ -29,6 +29,8 @@ module.exports = function (req, res, next) {
 function checkWhosOut() {
 	
 	var peeps = []
+	var data = ""
+	
 	var options = {
 		host: 'www.google.com',
 		port: 443,
@@ -37,11 +39,9 @@ function checkWhosOut() {
 	}	
 	
 	
-	console.log("Tweedle Dee " + Object.keys(options));
 	var req = https.request(options, function(res) {
 
 		var data = ""
-	 	console.log("Tweedle Dumb");	
 		res.on('data', function (chunk) {
 
 			data += chunk
@@ -51,7 +51,7 @@ function checkWhosOut() {
 
 			var jcalData = ICAL.parse(data)
 
-			console.log('///' + jcalData + '///');
+			//console.log('///' + jcalData + '///');
 
 			for ( var i = 0; i < jcalData[1][2].length; i++ ) {
 				
@@ -64,7 +64,7 @@ function checkWhosOut() {
 					var summary = jcalData[1][2][i][1][10][3]
 					var name = summary.split(' - ')[0]
 					peeps.push(name)
-
+					console.log("name: " + name);
 				}
 
 			}
@@ -72,10 +72,8 @@ function checkWhosOut() {
 		})
 
 	})
+	req.end()
 
-	console.log("\n=======================" + peeps + "\n=======================\n");
-
-	return peeps
 
 }
  
@@ -96,3 +94,5 @@ function send (payload, callback) {
 		callback(null, response.statusCode, body)
 	});
 }
+
+console.log(checkWhosOut());

@@ -1,8 +1,6 @@
 var ical = require( 'ical.js' );
 var https = require( 'https' );
-var Slack= require( 'node-slack' );
 
-var slack = new Slack("riflepaperco", "xoxb-4576633068-1grqY6hLDU6jjdXdN9ldz8oC");
 
 var options = {
 	host: 'www.google.com',
@@ -38,11 +36,6 @@ var options = {
 					}
 				}
 				console.log( peeps );
-				slack.send({
-					text: 'Howdy!',
-					channel: '#techsupport',
-					username: 'Beebot'
-				});
             })
     })
     req.end()
