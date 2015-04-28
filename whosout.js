@@ -26,7 +26,7 @@ module.exports = function (req, res, next) {
 	});
 }
  
-function checkWhosOut() {
+function checkWhosOut(callback) {
 	
 	var peeps = []
 	var data = ""
@@ -68,13 +68,12 @@ function checkWhosOut() {
 				}
 
 			}
+			callback(peeps);
 
 		})
 
 	})
 	req.end()
-	return peeps
-
 }
  
 function send (payload, callback) {
@@ -95,4 +94,6 @@ function send (payload, callback) {
 	});
 }
 
-console.log(checkWhosOut());
+checkWhosOut(function(peeps){
+	console.log(peeps)
+});
