@@ -73,7 +73,7 @@ function checkWhosOut() {
 
 	})
 	req.end()
-
+	return peeps
 
 }
  
